@@ -20,43 +20,47 @@
 
             foreach (string line in input)
             {
-
-                var firstDigit = '1';
-                var lastDigit = '1';
-
-                for (var i = 0; i <= line.Length - 1; i++)
-                {
-                    if (char.IsDigit(line[i]))
-                    {
-                        firstDigit = line.First(c => char.IsDigit(c));
-                        break;
-                    }
-                    else if (NumberStrings.Keys.Any(k => line.Substring(i).StartsWith(k)))
-                    {
-                        firstDigit = NumberStrings[NumberStrings.Keys.First(d => line.Substring(i).StartsWith(d))];
-                        break;
-                    }
-                }
-
-                for (int i = line.Length -1 ; i >= 0; i--)
-                {
-                    if (char.IsDigit(line[i]))
-                    {
-                        lastDigit = line.Last(c => char.IsDigit(c));
-                        break;
-                    }
-                    else if (NumberStrings.Keys.Any(k => line.Substring(0, i + 1).EndsWith(k)))
-                    {
-                        lastDigit = NumberStrings[NumberStrings.Keys.First(d => line.Substring(0, i + 1).EndsWith(d))];
-                        break;
-                    }
-                }
-
+                char firstDigit = GetFirstDigit(line);
+                char lastDigit = GetLastDigit(line);
 
                 currentSum += int.Parse(new string(new []{ firstDigit, lastDigit }));
             }
 
             return currentSum;
+        }
+
+        private static char GetLastDigit(string line)
+        {
+            for (int i = line.Length - 1; i >= 0; i--)
+            {
+                if (char.IsDigit(line[i]))
+                {
+                    return line.Last(c => char.IsDigit(c));
+                }
+                else if (NumberStrings.Keys.Any(k => line.Substring(0, i + 1).EndsWith(k)))
+                {
+                    return NumberStrings[NumberStrings.Keys.First(d => line.Substring(0, i + 1).EndsWith(d))];
+                }
+            }
+
+            return '0';
+        }
+
+        private static char GetFirstDigit(string line)
+        {
+            for (var i = 0; i <= line.Length - 1; i++)
+            {
+                if (char.IsDigit(line[i]))
+                {
+                    return line.First(c => char.IsDigit(c));
+                }
+                else if (NumberStrings.Keys.Any(k => line.Substring(i).StartsWith(k)))
+                {
+                    return NumberStrings[NumberStrings.Keys.First(d => line.Substring(i).StartsWith(d))];
+                }
+            }
+
+            return '0';
         }
     }
 }
