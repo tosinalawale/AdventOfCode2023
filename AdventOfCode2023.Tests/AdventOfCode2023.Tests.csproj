@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="6.12.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+    <PackageReference Include="NUnit.Analyzers" Version="3.6.1" />
+    <PackageReference Include="coverlet.collector" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Day02\" />
+    <Folder Include="Day03\" />
+    <Folder Include="Day04\" />
+    <Folder Include="Day05\" />
+    <Folder Include="Day06\" />
+    <Folder Include="Day07\" />
+    <Folder Include="Day08\" />
+    <Folder Include="Day09\" />
+    <Folder Include="Day10\" />
+    <Folder Include="Day11\" />
+    <Folder Include="Day12\" />
+    <Folder Include="Day13\" />
+    <Folder Include="Day14\" />
+    <Folder Include="Day15\" />
+    <Folder Include="Day16\" />
+    <Folder Include="Day17\" />
+    <Folder Include="Day18\" />
+    <Folder Include="Day19\" />
+    <Folder Include="Day20\" />
+    <Folder Include="Day21\" />
+    <Folder Include="Day22\" />
+    <Folder Include="Day23\" />
+    <Folder Include="Day24\" />
+    <Folder Include="Day25\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode2023\AdventOfCode2023.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Input\input01.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
