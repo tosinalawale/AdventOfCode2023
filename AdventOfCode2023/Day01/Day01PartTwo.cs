@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode2023.Day01
 {
-    public class Day01
+    public class Day01PartTwo
     {
         private static readonly Dictionary<string, char> NumberStrings = new()
         {
@@ -9,9 +9,9 @@
             { "seven", '7' }, { "eight", '8' }, { "nine", '9' }
         };
 
-        public static int CalculateResultForPartOne(string[] input)
+        public static int CalculateResult(string[] input)
         {
-            return PartOne(input);
+            return PartTwo(input);
         }
 
         private static int PartTwo(string[] input)
@@ -58,26 +58,5 @@
 
             return currentSum;
         }
-
-        public static int CalculateResultForPartTwo(string[] input)
-        {
-            return PartTwo(input);
-        }
-
-        private static int PartOne(string[] input)
-        {
-            var currentSum = 0;
-
-            foreach (string line in input)
-            {
-                char firstDigit = line.First(c => char.IsDigit(c));
-                char lastDigit = line.Last(c => char.IsDigit(c));
-
-                currentSum += int.Parse(new string(new[] { firstDigit, lastDigit }));
-            }
-
-            return currentSum;
-        }
-
     }
 }
