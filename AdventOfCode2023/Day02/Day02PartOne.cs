@@ -8,10 +8,10 @@
 
             foreach (string line in input)
             {
-                string[] lineParts = line.Split(":");
+                string[] lineParts = line.Split(": ");
                 int gameId = int.Parse(lineParts[0].Replace("Game ", string.Empty));
 
-                List<(int, int, int)> setsInGame = GetSetsInGame(lineParts[1].TrimStart());
+                List<(int, int, int)> setsInGame = GetSetsInGame(lineParts[1]);
                 if (setsInGame.All(s => s is { Item1: <= 12, Item2: <= 13, Item3: <= 14 }))
                 {
                     currentSum += gameId;
