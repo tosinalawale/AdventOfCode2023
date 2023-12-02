@@ -5,11 +5,6 @@
 
         public static int CalculateResult(string[] input)
         {
-            return PartOne(input);
-        }
-
-        private static int PartOne(string[] input)
-        {
             var currentSum = 0;
 
             foreach (string line in input)
@@ -22,6 +17,5 @@
 
             return currentSum;
         }
-
     }
 }
